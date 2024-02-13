@@ -1,10 +1,12 @@
+//Yara Mohamed
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
-import '../cache_helper.dart';
-import 'login.dart';
-import 'update_page.dart';
+import '../../cubit/ShopCubit/cubit.dart';
+import '../../cubit/ShopCubit/states.dart';
+import '../../CacheHelper/cache_helper.dart';
+import '../Login/login.dart';
+import '../UpdateProfile/update_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

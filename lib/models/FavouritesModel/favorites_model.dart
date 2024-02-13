@@ -1,3 +1,5 @@
+//Nadeen Elafify
+
 class FavoritesModel {
   bool? status;
   Null message;

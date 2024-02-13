@@ -1,7 +1,10 @@
+//Rana Mohsen
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
+import '../../cubit/ShopCubit/cubit.dart';
+import '../../cubit/ShopCubit/states.dart';
 
 class ShopLayout extends StatelessWidget {
   const ShopLayout({super.key});

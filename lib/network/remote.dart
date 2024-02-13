@@ -1,11 +1,9 @@
 import 'package:dio/dio.dart';
 
-
-
+//Rana Mohsen
 class DioHelper
 {
   static late Dio dio;
-
 
   static init(){
     dio = Dio(
@@ -19,6 +17,7 @@ class DioHelper
     );
   }
 
+  //Rana Mohsen
   static Future<Response> getData({
     required String url,
     Map<String, dynamic>?query,
@@ -47,6 +46,7 @@ class DioHelper
     );
   }
 
+//Menna Nabil
 
   static Future<Response> postData({
     required String url,
@@ -67,6 +67,9 @@ class DioHelper
     );
   }
 
+
+  //Yara Mohamed
+
   static Future<Response> putData({
     required String url,
     Map<String, dynamic>? query,
@@ -85,9 +88,6 @@ class DioHelper
       data: data,
     );
   }
-
-
-
 
 }
 

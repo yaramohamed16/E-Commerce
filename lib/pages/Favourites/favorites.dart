@@ -1,9 +1,11 @@
+//Nadeen Elafify
+
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
-import '../models/favorites_model.dart';
+import '../../cubit/ShopCubit/cubit.dart';
+import '../../cubit/ShopCubit/states.dart';
+import '../../models/FavouritesModel/favorites_model.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});

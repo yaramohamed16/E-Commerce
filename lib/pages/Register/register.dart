@@ -1,13 +1,15 @@
-import '../cubit/cubit.dart';
-import '../cubit/register_cubit/register_cubit.dart';
-import 'ShopLayout.dart';
-import 'login.dart';
+//Menna Nabil
+
+import '../../cubit/ShopCubit/cubit.dart';
+import '../../cubit/register_cubit/register_cubit.dart';
+import '../HomePage/ShopLayout.dart';
+import '../Login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-import '../cache_helper.dart';
-import '../constant.dart';
+import '../../CacheHelper/cache_helper.dart';
+import '../../Constants/constant.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});

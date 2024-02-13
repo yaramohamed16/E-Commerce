@@ -1,9 +1,11 @@
+//Rana Mohsen
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../cubit/cubit.dart';
-import '../cubit/states.dart';
-import '../models/home_model.dart';
+import '../../cubit/ShopCubit/cubit.dart';
+import '../../cubit/ShopCubit/states.dart';
+import '../../models/HomeModel/home_model.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class ProductsScreen extends StatelessWidget {

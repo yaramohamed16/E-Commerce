@@ -1,8 +1,9 @@
-import '../models/change_favorites_model.dart';
+import '../../models/ChangeFavouriteModel/change_favorites_model.dart';
 
-import '../models/favorites_model.dart';
-import '../models/login.dart';
+import '../../models/FavouritesModel/favorites_model.dart';
+import '../../models/LoginModel/login.dart';
 
+//Rana Mohsen
 abstract class ShopStates {}
 
 class ShopInitialState extends ShopStates {}
@@ -15,31 +16,39 @@ class ShopSuccessHomeDataState extends ShopStates {}
 
 class ShopErrorHomeDataState extends ShopStates {}
 
+//Nadeen Elafify
 
-class ShopChangeFavoritesState extends ShopStates{}
-class ShopSuccessChangeFavoritesState extends ShopStates{
+//ChangeFavorites
+class ShopChangeFavoritesState extends ShopStates {}
+
+class ShopSuccessChangeFavoritesState extends ShopStates {
   final ChangeFavoritesModel model;
+
   ShopSuccessChangeFavoritesState(this.model);
 }
 
-class ShopErrorChangeFavoritesState extends ShopStates{}
+class ShopErrorChangeFavoritesState extends ShopStates {}
 
-
-
-class ShopSuccessGetFavoritesState extends ShopStates{
+//GetFavorites
+class ShopSuccessGetFavoritesState extends ShopStates {
   final FavoritesModel favoritesModel;
+
   ShopSuccessGetFavoritesState(this.favoritesModel);
 }
-class ShopErrorGetFavoritesState extends ShopStates{}
-class ShopLoadingGetFavoritesState extends ShopStates{}
+
+class ShopErrorGetFavoritesState extends ShopStates {}
+
+class ShopLoadingGetFavoritesState extends ShopStates {}
 
 
+//Yara Mohamed
 //userData:
 
 class ShopLoadingUserDataState extends ShopStates {}
 
 class ShopSuccessUserDataState extends ShopStates {
-  final  LoginModel loginModel;
+  final LoginModel loginModel;
+
   ShopSuccessUserDataState(this.loginModel);
 }
 
@@ -50,11 +59,9 @@ class ShopErrorUserDataState extends ShopStates {}
 class ShopLoadingUpdateUserState extends ShopStates {}
 
 class ShopSuccessUpdateUserState extends ShopStates {
-  final  LoginModel loginModel;
+  final LoginModel loginModel;
+
   ShopSuccessUpdateUserState(this.loginModel);
 }
 
 class ShopErrorUpdateUserState extends ShopStates {}
-
-
-

@@ -135,6 +135,7 @@ class ShopCubit extends Cubit<ShopStates> {
     }
   }
 
+  //Yara Mohamed
   void clearUserData() {
     userModel = null;
   }

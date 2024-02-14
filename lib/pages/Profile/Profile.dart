@@ -8,41 +8,32 @@ import '../../CacheHelper/cache_helper.dart';
 import '../Login/login.dart';
 import '../UpdateProfile/update_page.dart';
 
-class ProfilePage extends StatefulWidget {
+class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
-}
-
-class _ProfilePageState extends State<ProfilePage> {
-  String userName = '';
-
-  String userEmail = '';
-
-  String userPhone = '';
-
-  @override
-  void initState() {
-    super.initState();
-    ShopCubit.get(context).getUserData();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    String userName = '';
+    String userEmail = '';
+    String userPhone = '';
+
     return BlocConsumer<ShopCubit, ShopStates>(
       listener: (context, state) {
-        // print('ProfilePage: Received state - $state');
         if (state is ShopSuccessUpdateUserState) {
-          setState(() {
-            userName = state.loginModel.data?.name ?? userName;
-            userEmail = state.loginModel.data?.email ?? userEmail;
-            userPhone = state.loginModel.data?.phone ?? userPhone;
-          });
+          userName = state.loginModel.data?.name ?? userName;
+          userEmail = state.loginModel.data?.email ?? userEmail;
+          userPhone = state.loginModel.data?.phone ?? userPhone;
         }
       },
       builder: (context, state) {
         if (state is ShopLoadingUserDataState) {
+          return const Scaffold(
+            body: Center(
+              child: CircularProgressIndicator(),
+            ),
+          );
+        }
+        if (userName.isEmpty || userEmail.isEmpty) {
           return const Scaffold(
             body: Center(
               child: CircularProgressIndicator(),
@@ -57,7 +48,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 children: [
                   Padding(
                     padding:
-                    const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        const EdgeInsets.only(left: 16, right: 16, top: 16),
                     child: Row(
                       children: [
                         CircleAvatar(
@@ -89,8 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   buildTextButtonWithIcon(
                     'Update Profile',
                     Icons.arrow_forward,
-                        () async {
-
+                    () async {
                       Map<String, String> updatedData = await Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -102,18 +92,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       );
 
-                      setState(() {
-                        userName = updatedData['username'] ?? userName;
-                        userEmail = updatedData['email'] ?? userEmail;
-                        userPhone = updatedData['phone'] ?? userPhone;
-                      });
+                      // Handle updated data here if needed
                     },
                   ),
                   const SizedBox(height: 20),
                   buildTextButtonWithIcon(
                     'Log Out',
                     null,
-                        () {
+                    () {
                       CacheHelper.removeData(key: 'token').then((value) {
                         if (value) {
                           // Clear the cached user data
@@ -154,14 +140,12 @@ class _ProfilePageState extends State<ProfilePage> {
             buttonText,
             style: const TextStyle(fontSize: 20),
           ),
-          const SizedBox(width: 10),
-          if (iconData != null) Icon(iconData)
+          const SizedBox(
+            width: 10,
+          ),
+          if (iconData != null) Icon(iconData),
         ],
       ),
     );
   }
 }
-
-// class _ProfilePageState extends State<ProfilePage> {
-//
-// }

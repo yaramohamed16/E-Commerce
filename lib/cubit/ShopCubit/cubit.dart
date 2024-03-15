@@ -36,6 +36,7 @@ class ShopCubit extends Cubit<ShopStates> {
     if (index == 3) getUserData();
     emit(ShopChangeBottomNavState());
   }
+
 //Rana Mohsen
 
   HomeModel? homeModel;
@@ -150,7 +151,6 @@ class ShopCubit extends Cubit<ShopStates> {
   }) async {
     emit(ShopLoadingUpdateUserState());
     print("Token: $token");
-
     try {
       final value = await DioHelper.putData(
         url: UPDATEPROFILE,
